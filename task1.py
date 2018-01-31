@@ -17,9 +17,18 @@ class Network_Subnetting:
 
 	print ("Network Address:", self.net_addr)
 
-	def subnet(self):
+	def subnet(self,count):
 		c = int(math.log(count,2))
 		tar = self.prefix + c
 		ad = "1"*tar + "0"*[32-tar]
 		octet = (ad[0:8],ad[8:16],ad[16:24],ad[24:32])
 		print (octet)
+
+		move = math.ceil( target / 8.0 ) #steps to identify which octets needs to be moved
+        	host = (move*8) - target
+
+		jump = 2**host #to identify the interval
+
+
+		
+		
