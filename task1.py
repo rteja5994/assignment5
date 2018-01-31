@@ -4,6 +4,7 @@ class Network_Subnetting:
 
 	def __init__(self,ip,prefix):
 		self.net_address = []
+		self.copy_address = []
 		self.prefix = []
 		ip = ip.split(".")
 		ad = "1"*prefix + "0"*[32-prefix]
@@ -28,6 +29,11 @@ class Network_Subnetting:
         	host = (move*8) - target
 
 		jump = 2**host #to identify the interval
+
+ 		#let us make a temporary storage variable to push the subnet obtained from the ip address
+
+		self.copy_address = copy.deepcopy(self.net_address)
+		
 
 
 		
